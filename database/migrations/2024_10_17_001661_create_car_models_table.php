@@ -19,8 +19,9 @@ return new class extends Migration
             $table->integer('numOfSeats')->unsigned();
             $table->integer('numOfDoors');
             $table->string('fuelType');
+            $table->decimal('pricePerDay', 10, 2);
             $table->boolean('hasAc')->default(true);
-            $table->string('carImage');
+            $table->string('carImage')->nullable();
             $table->timestamps();
         });
     }

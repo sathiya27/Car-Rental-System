@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('car_model_id')->constrained()->cascadeOnDelete();
             $table->string('carColor');
             $table->string('carNumber');
-            $table->integer('distanceTravaled');
+            $table->integer('distanceTraveled');
             $table->date('availableDate');
             $table->timestamps();
         });
