@@ -16,7 +16,7 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage');
 });
 
 Route::get('/dashboard', function () {
@@ -29,6 +29,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 route::get('admin/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'admin'])->name('home');
+
+Route::get('/homepage', function () {
+    return view('homepage');
+})->middleware(['auth'])->name('homepage');
