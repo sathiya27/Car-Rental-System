@@ -62,10 +62,7 @@ body {
 }
 
 .header_section {
-  position: absolute;
   width: 100%;
-  top: 0;
-  left: 0;
 }
 
 .header_section .container-fluid {
@@ -224,7 +221,7 @@ a:focus {
 .navbar-brand span {
   font-size: 24px;
   font-weight: 700;
-  color: #240a5e;
+  color: white;
 }
 
 .custom_nav-container {

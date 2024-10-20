@@ -4,14 +4,11 @@
 
 @section('content')
 <div class="hero_area">
-  <!-- header section strats -->
-  @include('layouts.mainHeadNav')
-  <!-- end header section -->
   <!-- slider section -->
   <section class=" slider_section position-relative">
     <div class="slider_container">
       <div class="img-box">
-        <img src="images/hero-img.jpg" alt="">
+        <img src="{{asset('images/hero-img.jpg')}}" alt="">
       </div>
       <div class="detail_container">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -69,7 +66,7 @@
 <!-- book section -->
 <section class="book_section">
   <div class="form_container">
-    <form action="">
+    <form action="{{route('cars.index')}}">
       <div class="form-row">
         <div class="col-lg-8">
           <div class="form-row">
@@ -105,7 +102,7 @@
     </form>
   </div>
   <div class="img-box">
-    <img src="images/book-car.png" alt="">
+    <img src="{{asset('images/book-car.png')}}" alt="">
   </div>
 </section>
 
@@ -126,7 +123,7 @@
     <div class="car_container">
       <div class="box">
         <div class="img-box">
-          <img src="images/c-1.png" alt="">
+          <img src="{{asset('images/c-1.png')}}" alt="">
         </div>
         <div class="detail-box">
           <h5>
@@ -142,7 +139,7 @@
       </div>
       <div class="box">
         <div class="img-box">
-          <img src="images/c-2.png" alt="">
+          <img src="{{asset('images/c-2.png')}}" alt="">
         </div>
         <div class="detail-box">
           <h5>
@@ -158,7 +155,7 @@
       </div>
       <div class="box">
         <div class="img-box">
-          <img src="images/c-3.png" alt="">
+          <img src="{{asset('images/c-3.png')}}" alt="">
         </div>
         <div class="detail-box">
           <h5>
@@ -185,7 +182,7 @@
     <div class="row">
       <div class="col-md-7 px-0">
         <div class="img-box">
-          <img src="images/about-img.png" alt="">
+          <img src="{{asset('images/about-img.png')}}" alt="">
         </div>
       </div>
       <div class="col-md-4 col-lg-3">
@@ -239,7 +236,7 @@
     <div class="rent_container">
       <div class="box">
         <div class="img-box">
-          <img src="images/r-1.png" alt="">
+          <img src="{{asset('images/r-1.png')}}" alt="">
         </div>
         <div class="price">
           <a href="">
@@ -249,7 +246,7 @@
       </div>
       <div class="box">
         <div class="img-box">
-          <img src="images/r-2.png" alt="">
+          <img src="{{asset('images/r-2.png')}}" alt="">
         </div>
         <div class="price">
           <a href="">
@@ -259,7 +256,7 @@
       </div>
       <div class="box">
         <div class="img-box">
-          <img src="images/r-3.png" alt="">
+          <img src="{{asset('images/r-3.png')}}" alt="">
         </div>
         <div class="price">
           <a href="">
@@ -269,7 +266,7 @@
       </div>
       <div class="box">
         <div class="img-box">
-          <img src="images/r-4.png" alt="">
+          <img src="{{asset('images/r-4.png')}}" alt="">
         </div>
         <div class="price">
           <a href="">
@@ -279,7 +276,7 @@
       </div>
       <div class="box">
         <div class="img-box">
-          <img src="images/r-5.png" alt="">
+          <img src="{{asset('images/r-5.png')}}" alt="">
         </div>
         <div class="price">
           <a href="">
@@ -289,7 +286,7 @@
       </div>
       <div class="box">
         <div class="img-box">
-          <img src="images/r-6.png" alt="">
+          <img src="{{asset('images/r-6.png')}}" alt="">
         </div>
         <div class="price">
           <a href="">
@@ -334,7 +331,7 @@
                 </h6>
               </div>
               <div class="img-box">
-                <img src="images/b-1.jpg" alt="">
+                <img src="{{asset('images/b-1.jpg')}}" alt="">
               </div>
               <div class="detail-box">
                 <h5>
@@ -353,7 +350,7 @@
                 </h6>
               </div>
               <div class="img-box">
-                <img src="images/b-2.jpg" alt="">
+                <img src="{{asset('images/b-2.jpg')}}" alt="">
               </div>
               <div class="detail-box">
                 <h5>
@@ -372,7 +369,7 @@
                 </h6>
               </div>
               <div class="img-box">
-                <img src="images/b-3.jpg" alt="">
+                <img src="{{asset('images/b-3.jpg')}}" alt="">
               </div>
               <div class="detail-box">
                 <h5>
@@ -391,7 +388,7 @@
                 </h6>
               </div>
               <div class="img-box">
-                <img src="images/b-2.jpg" alt="">
+                <img src="{{asset('images/b-2.jpg')}}" alt="">
               </div>
               <div class="detail-box">
                 <h5>
@@ -427,7 +424,7 @@
     <div class="content_box">
       <div class="box">
         <div class="img-box">
-          <img src="images/u-1.png" alt="">
+          <img src="{{asset('images/u-1.png')}}" alt="">
         </div>
         <div class="detail-box">
           <h5>
@@ -437,7 +434,7 @@
       </div>
       <div class="box">
         <div class="img-box">
-          <img src="images/u-2.png" alt="">
+          <img src="{{asset('images/u-2.png')}}" alt="">
         </div>
         <div class="detail-box">
           <h5>
@@ -447,7 +444,7 @@
       </div>
       <div class="box">
         <div class="img-box">
-          <img src="images/u-3.png" alt="">
+          <img src="{{asset('images/u-3.png')}}" alt="">
         </div>
         <div class="detail-box">
           <h5>
@@ -457,7 +454,7 @@
       </div>
       <div class="box">
         <div class="img-box">
-          <img src="images/u-4.png" alt="">
+          <img src="{{asset('images/u-4.png')}}" alt="">
         </div>
         <div class="detail-box">
           <h5>
@@ -500,8 +497,8 @@
               </div>
               <div class="client_id">
                 <div class="img-box">
-                  <img src="images/client-1.png" alt="" class="img-1">
-                  <img src="images/client-1-white.png" alt="" class="img-2">
+                  <img src="{{asset('images/client-1.png')}}" alt="" class="img-1">
+                  <img src="{{asset('images/client-1-white.png')}}" alt="" class="img-2">
                 </div>
                 <div class="name">
                   <h6>
@@ -523,8 +520,8 @@
               </div>
               <div class="client_id">
                 <div class="img-box">
-                  <img src="images/client-2.png" alt="" class="img-1">
-                  <img src="images/client-2-white.png" alt="" class="img-2">
+                  <img src="{{asset('images/client-2.png')}}" alt="" class="img-1">
+                  <img src="{{asset('images/client-2-white.png')}}" alt="" class="img-2">
                 </div>
                 <div class="name">
                   <h6>
@@ -546,8 +543,8 @@
               </div>
               <div class="client_id">
                 <div class="img-box">
-                  <img src="images/client-1.png" alt="" class="img-1">
-                  <img src="images/client-1-white.png" alt="" class="img-2">
+                  <img src="{{asset('images/client-1.png')}}" alt="" class="img-1">
+                  <img src="{{asset('images/client-1-white.png')}}" alt="" class="img-2">
                 </div>
                 <div class="name">
                   <h6>
@@ -569,8 +566,8 @@
               </div>
               <div class="client_id">
                 <div class="img-box">
-                  <img src="images/client-1.png" alt="" class="img-1">
-                  <img src="images/client-1-white.png" alt="" class="img-2">
+                  <img src="{{asset('images/client-1.png')}}" alt="" class="img-1">
+                  <img src="{{asset('images/client-1-white.png')}}" alt="" class="img-2">
                 </div>
                 <div class="name">
                   <h6>
@@ -632,7 +629,7 @@
 
       <a href="">
         <div class="img-box">
-          <img src="images/location.png" alt="">
+          <img src="{{asset('images/location.png')}}" alt="">
         </div>
         <h6>
           Loram Ipusum ari
@@ -641,7 +638,7 @@
       </a>
       <a href="">
         <div class="img-box">
-          <img src="images/call.png" alt="">
+          <img src="{{asset('images/call.png')}}" alt="">
         </div>
         <h6>
           (+12 1234456789)
@@ -649,7 +646,7 @@
       </a>
       <a href="">
         <div class="img-box">
-          <img src="images/mail.png" alt="">
+          <img src="{{asset('images/mail.png')}}" alt="">
         </div>
         <h6>
           demo@gmail.com
@@ -661,22 +658,22 @@
       <div class="social-box">
         <div>
           <a href="">
-            <img src="images/fb.png" alt="">
+            <img src="{{asset('images/fb.png')}}" alt="">
           </a>
         </div>
         <div>
           <a href="">
-            <img src="images/twitter.png" alt="">
+            <img src="{{asset('images/twitter.png')}}" alt="">
           </a>
         </div>
         <div>
           <a href="">
-            <img src="images/linkedin.png" alt="">
+            <img src="{{asset('images/linkedin.png')}}" alt="">
           </a>
         </div>
         <div>
           <a href="">
-            <img src="images/insta.png" alt="">
+            <img src="{{asset('images/insta.png')}}" alt="">
           </a>
         </div>
       </div>

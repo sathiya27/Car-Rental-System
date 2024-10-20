@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -17,7 +18,7 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
     return view('homepage');
-});
+})->name('customer.homepage');;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -31,8 +32,13 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__ . '/auth.php';
 
-route::get('admin/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'admin'])->name('home');
 
-Route::get('/homepage', function () {
-    return view('homepage');
-})->middleware(['auth'])->name('homepage');
+
+
+Route::middleware(['auth', 'admin'])->group(function () {
+    route::get('/admin/dashboard', [HomeController::class, 'index'])->name('admin.dashboard');
+});
+
+Route::middleware(['auth', 'customer'])->group(function () {});
+
+Route::get('/cars', [CarController::class, 'index'])->name('cars.index');

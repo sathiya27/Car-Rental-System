@@ -29,12 +29,14 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        if($request->user()->userType === 'admin'){
-            return redirect()->route('home');
+        if ($request->user()->userType === 'user') {
+            return redirect()->route('customer.homepage');
+            dd('here');
+        } elseif ($request->user()->userType === 'admin') {
+            return redirect()->route('admin.dashboard');
         }
-
         /* return redirect()->intended(RouteServiceProvider::HOME); */
-        return redirect()->route('homepage');
+        return redirect('/');
     }
 
     /**
