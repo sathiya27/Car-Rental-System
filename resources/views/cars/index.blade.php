@@ -11,23 +11,30 @@
             </h2>
         </div>
         <div class="car_container">
+            @foreach($carModels as $carModel)
             <div class="box">
                 <div class="img-box">
                     <img src="{{asset('images/c-1.png')}}" alt="">
                 </div>
                 <div class="detail-box">
                     <h5>
-                        Choose Your Car
+                        {{$carModel->modelName}}
                     </h5>
                     <p>
-                        It is a long established fact that a reader will be distracted by the readable content of a page when
+                        Number of available cars: {{$carModel->available_cars_count}}
                     </p>
+                    <ul>
+                        @foreach ($carModel->cars as $car)
+                        <li>{{ $car->carColor }}</li>
+                        @endforeach
+                    </ul>
                     <a href="">
                         Read More
                     </a>
                 </div>
             </div>
-            <div class="box">
+            @endforeach
+            <!-- <div class="box">
                 <div class="img-box">
                     <img src="{{asset('images/c-2.png')}}" alt="">
                 </div>
@@ -58,7 +65,7 @@
                         Read More
                     </a>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>

@@ -16,9 +16,7 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-})->name('customer.homepage');;
+Route::get('/', [HomeController::class, 'userHomepage'])->name('customer.homepage');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -36,7 +34,7 @@ require __DIR__ . '/auth.php';
 
 
 Route::middleware(['auth', 'admin'])->group(function () {
-    route::get('/admin/dashboard', [HomeController::class, 'index'])->name('admin.dashboard');
+    route::get('/admin/dashboard', [HomeController::class, 'adminDashboard'])->name('admin.dashboard');
 });
 
 Route::middleware(['auth', 'customer'])->group(function () {});

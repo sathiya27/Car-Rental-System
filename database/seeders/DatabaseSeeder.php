@@ -25,20 +25,22 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             LocationSeeder::class,
+            UserSeeder::class,
         ]);
 
         $myvi = CarModel::factory()->myvi()->create();
-        Car::factory()->count(4)->for($myvi)->create();
+        Car::factory()->count(2)->tenDaysAfterAvailable()->for($myvi)->create();
+        Car::factory()->count(2)->fiveDaysAfterAvailable()->for($myvi)->create();
 
         $vellfire = CarModel::factory()->vellfire()->create();
-        Car::factory()->count(4)->for($vellfire)->create();
-
+        Car::factory()->count(2)->tenDaysAfterAvailable()->for($vellfire)->create();
+        Car::factory()->count(2)->fiveDaysAfterAvailable()->for($vellfire)->create();
         $x70 = CarModel::factory()->x70()->create();
-        Car::factory()->count(4)->for($x70)->create();
-
+        Car::factory()->count(2)->tenDaysAfterAvailable()->for($x70)->create();
+        Car::factory()->count(2)->fiveDaysAfterAvailable()->for($x70)->create();
         $saga = CarModel::factory()->saga()->create();
-        Car::factory()->count(4)->for($saga)->create();
-
+        Car::factory()->count(2)->tenDaysAfterAvailable()->for($saga)->create();
+        Car::factory()->count(2)->fiveDaysAfterAvailable()->for($saga)->create();
         /* CarModel::factory()->vellfire()->create()->each(function($vellfire){
             Car::factory()->count(3)
                 ->for($vellfire)

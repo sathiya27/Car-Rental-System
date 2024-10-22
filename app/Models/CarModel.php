@@ -13,4 +13,18 @@ class CarModel extends Model
     {
         return $this->hasMany(Car::class);
     }
+
+    public static function availableCars($chosenDate)
+    {
+        return CarModel::whereHas('cars', function ($query) use ($chosenDate) {
+            $query->where('availableDate', '<=', $chosenDate);
+        })
+            ->with(['cars' => function ($query) use ($chosenDate) {
+                $query->where('availableDate', '<=', $chosenDate);
+            }])
+            ->withCount(['cars as available_cars_count' => function ($query) use ($chosenDate) {
+                $query->where('availableDate', '<=', $chosenDate);
+            }])
+            ->get();
+    }
 }

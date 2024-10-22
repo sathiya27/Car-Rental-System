@@ -18,4 +18,9 @@ class Car extends Model
     {
         return $this->hasMany(Booking::class);
     }
+
+    public static function getAvailableCars($filterDate)
+    {
+        return self::where('availableDate', '<=', $filterDate)->get();
+    }
 }

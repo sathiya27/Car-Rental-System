@@ -12,7 +12,12 @@ class Location extends Model
     public function bookings()
     {
         return $this->belongsToMany(Booking::class, 'booking_location')
-                    ->withPivot('type')
-                    ->withTimestamps();
+            ->withPivot('type')
+            ->withTimestamps();
+    }
+
+    public static function availabeLocation()
+    {
+        return Location::where('isAvailable', true)->get();
     }
 }

@@ -3,6 +3,15 @@
 @section('title', 'Home page')
 
 @section('content')
+@if ($errors->any())
+<div class="alert alert-danger">
+  <ul>
+    @foreach ($errors->all() as $error)
+    <li>{{ $error }}</li>
+    @endforeach
+  </ul>
+</div>
+@endif
 <div class="hero_area">
   <!-- slider section -->
   <section class=" slider_section position-relative">
@@ -71,22 +80,32 @@
         <div class="col-lg-8">
           <div class="form-row">
             <div class="col-md-6">
-              <label for="parkingName">Pick Up Locaion</label>
-              <input type="text" class="form-control" placeholder="acb ">
+              <label for="pickUpLocation">Pick Up Locaion</label>
+              <select name="pickUpLocation" id="pickUpLocation" class="form-control" required>
+                <option value="" disabled selected>Select a location</option>
+                @foreach($locations as $location)
+                <option value="{{$location->id}}">{{$location->locationName}}</option>
+                @endforeach
+              </select>
             </div>
             <div class="col-md-6">
-              <label for="parkingNumber">Drop Location</label>
-              <input type="text" class="form-control" placeholder="acb ">
+              <label for="dropOffLocation">Pick Up Locaion</label>
+              <select name="dropOffLocation" id="dropOffLocation" class="form-control" required>
+                <option value="" disabled selected>Select a location</option>
+                @foreach($locations as $location)
+                <option value="{{$location->id}}">{{$location->locationName}}</option>
+                @endforeach
+              </select>
             </div>
           </div>
           <div class="form-row">
             <div class="col-md-6">
-              <label for="parkingName">Pick Up Date</label>
-              <input type="text" class="form-control" placeholder="07/09/2020">
+              <label for="pickUpDate">Pick Up Date</label>
+              <input type="date" name="pickUpDate" class="form-control" min="{{ date('Y-m-d') }}" required>
             </div>
             <div class="col-md-6">
-              <label for="parkingNumber">Return Date</label>
-              <input type="text" class="form-control" placeholder="07/09/2020">
+              <label for="dropOffDate">Drop Off Date</label>
+              <input type="date" name="dropOffDate" class="form-control" min="{{ date('Y-m-d') }}" required>
             </div>
           </div>
         </div>
