@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CarModel;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class CarController extends Controller
 {
@@ -16,7 +17,8 @@ class CarController extends Controller
             'dropOffDate' => 'required|date',
         ]);
 
+        $date = Carbon::parse($request->input('pickUpDate'))->format('jS F Y');
         $carModels = CarModel::availableCars($request->input('pickUpDate'));
-        return view('cars.index', ['carModels' => $carModels]);
+        return view('cars.index', ['carModels' => $carModels, 'date' => $date]);
     }
 }

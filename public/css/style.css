@@ -1134,4 +1134,97 @@ a:focus {
 .footer_section a {
   color: #fefdfc;
 }
+
+.pro-container {
+  display: flex;
+  padding-top:20px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+#cars-list {
+  text-align: center;   
+ }
+ 
+ #cars-list .pro{
+     width: 23%;
+     min-width: 250px;
+     padding: 10px 12px;
+     border: 1px solid #cce7d0;
+     border-radius: 25px;
+     cursor: pointer;
+     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+     margin: 15px 0;
+     transition: 0.2s ease;
+     position: relative;
+ }
+ 
+ #cars-list .pro:hover{
+     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+ }
+ 
+ #cars-list .pro .car-image {
+    width: 230px;
+    height: 200px;
+ }
+ #cars-list .pro .car-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+ 
+ #cars-list .pro .des {
+     text-align: start;
+     padding: 10px 0;
+ }
+
+ #cars-list .pro .des .car-info {
+  padding: 20px 0px;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+#cars-list .pro .des .info-item {
+  text-align: center;
+}
+
+#cars-list .pro .des .info-item i {
+  display: block;
+  font-size: 24px;
+}
+ 
+ #cars-list .pro .des h3 {
+  padding: 20px;
+     color: #606063;
+     text-align: center;
+     font-weight: bold;
+ }
+ 
+ #cars-list .pro .des h5 {
+     padding-top: 7px;
+     color: #1a1a1a;
+     font-size: 14px;
+ }
+ 
+ #cars-list .pro .des h4{
+     padding-top: 7px;
+     font-size: 15px;
+     font-weight: 700;
+     color: #088178;
+ }
+ 
+ #cars-list .pro .cart {
+     width: 40px;
+     height: 40px;
+     line-height: 40px;
+     border-radius: 50px;
+     background-color: #e8f6ea;
+     color: #088178;
+     border: 1px solid #cce7d0;
+     position: absolute;
+     bottom: 15px;
+     right: 10px;
+ }
+
 /*# sourceMappingURL=style.css.map */
