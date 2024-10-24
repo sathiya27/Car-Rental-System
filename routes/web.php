@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\CarModelController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -39,4 +40,5 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 Route::middleware(['auth', 'customer'])->group(function () {});
 
-Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
+/* Route::get('/cars', [CarController::class, 'index'])->name('cars.index'); */
+Route::resource('carModels', CarModelController::class);

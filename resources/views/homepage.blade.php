@@ -75,7 +75,7 @@
 <!-- book section -->
 <section class="book_section">
   <div class="form_container">
-    <form action="{{route('cars.index')}}">
+    <form action="{{route('carModels.index')}}">
       <div class="form-row">
         <div class="col-lg-8">
           <div class="form-row">

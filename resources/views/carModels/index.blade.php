@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Cars')
+@section('title', 'CarModels')
 
 @section('content')
 <section id="cars-list" class="layout_padding2-top layout_padding-bottom">
@@ -12,7 +12,9 @@
         </div>
         <div class="pro-container">
             @foreach($carModels as $carModel)
-            <div class="pro" onclick="window.location.href='Sshop.html';">
+
+            <div class="pro" onclick="window.location.href='{{ route('carModels.show', $carModel->id) }}';">
+
                 <div class="car-image">
                     <img src="{{asset('images/' . $carModel->carImage)}}" alt="">
                     <!-- <img src="https://placehold.co/230x200" alt=""> -->

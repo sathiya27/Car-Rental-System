@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
-use App\Models\CarModel;
 use Illuminate\Http\Request;
 
-class CarController extends Controller
+use Carbon\Carbon;
+use App\Models\CarModel;
+
+class CarModelController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +16,7 @@ class CarController extends Controller
      */
     public function index(Request $request)
     {
-        /* $request->validate([
+        $request->validate([
             'pickUpLocation' => 'required|exists:locations,id',
             'dropOffLocation' => 'required|exists:locations,id',
             'pickUpDate' => 'required|date',
@@ -24,7 +25,7 @@ class CarController extends Controller
 
         $date = Carbon::parse($request->input('pickUpDate'))->format('jS F Y');
         $carModels = CarModel::availableCars($request->input('pickUpDate'));
-        return view('cars.index', ['carModels' => $carModels, 'date' => $date]); */
+        return view('carModels.index', ['carModels' => $carModels, 'date' => $date]);
     }
 
     /**
@@ -56,7 +57,7 @@ class CarController extends Controller
      */
     public function show(CarModel $carModel)
     {
-        dd('worked');
+        return view('carModels.show', ['carModel' => $carModel]);
     }
 
     /**
