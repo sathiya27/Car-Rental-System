@@ -1178,18 +1178,21 @@ a:focus {
      padding: 10px 0;
  }
 
- #cars-list .pro .des .car-info {
+ #cars-list .pro .des .car-info, 
+ #proDetails .single-pro-details .car-info {
   padding: 20px 0px;
   display: flex;
   justify-content: space-evenly;
   gap: 20px;
 }
 
-#cars-list .pro .des .info-item {
+#cars-list .pro .des .info-item,
+#proDetails .single-pro-details .info-item {
   text-align: center;
 }
 
-#cars-list .pro .des .info-item i {
+#cars-list .pro .des .info-item i,
+#proDetails .single-pro-details .info-item i {
   display: block;
   font-size: 24px;
 }
@@ -1227,4 +1230,123 @@ a:focus {
      right: 10px;
  }
 
+ #proDetails .single-pro-image {
+  width: 40%;
+  margin-right: 40px;
+  display: flex;
+  align-items: center;
+}
+
+#proDetails {
+  display: flex;
+  margin-top: 20px;
+}
+
+#proDetails .single-pro-details{
+  width: 50%;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 4px -2px 19px 0px rgba(0,0,0,0.4);
+-webkit-box-shadow: 4px -2px 19px 0px rgba(0,0,0,0.4);
+-moz-box-shadow: 4px -2px 19px 0px rgba(0,0,0,0.4);
+}
+
+#proDetails .single-pro-details h4 {
+  padding: 40px 0 20px 0;
+}
+
+
+#proDetails .single-pro-details .center-car-title {
+  text-align: center;
+  padding: 15px;
+}
+
+#proDetails .single-pro-details .car-name {
+  padding: 15px;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: #088178;
+  color: #fff;
+  display: inline-block;
+  border-radius: 20px;
+}
+
+#proDetails .single-pro-details h2 {
+  font-size: 26px;
+}
+
+#proDetails .single-pro-details select {
+  display: block;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+#proDetails .single-pro-details input {
+  width: 50px;
+  height: 47px;
+  padding-left: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+#proDetails .single-pro-details input:focus{
+  outline: none;
+}
+
+#proDetails .single-pro-details button {
+  background-color: #088178;
+  color: #fff;
+}
+
+#proDetails .single-pro-details span {
+  line-height: 25px;
+}
+
+.section-p1 {
+  padding: 60px 80px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 477px) {
+    #proDetails {
+      display: flex;
+      flex-direction: column;
+  }
+
+  #proDetails .single-pro-image {
+      width: 100%;
+      margin-right: 0;
+  }
+
+  #proDetails .single-pro-details {
+      width: 100%;
+  }
+
+  .section-p1 {
+    padding: 40px 40px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
