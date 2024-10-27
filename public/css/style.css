@@ -1186,6 +1186,11 @@ a:focus {
   gap: 20px;
 }
 
+#proDetails .single-pro-details .car-info {
+  border-bottom: 2px solid #d9e2e8;
+  margin-bottom:15px ;
+}
+
 #cars-list .pro .des .info-item,
 #proDetails .single-pro-details .info-item {
   text-align: center;
@@ -1251,10 +1256,6 @@ a:focus {
 -moz-box-shadow: 4px -2px 19px 0px rgba(0,0,0,0.4);
 }
 
-#proDetails .single-pro-details h4 {
-  padding: 40px 0 20px 0;
-}
-
 
 #proDetails .single-pro-details .center-car-title {
   text-align: center;
@@ -1302,9 +1303,51 @@ a:focus {
   line-height: 25px;
 }
 
-.section-p1 {
-  padding: 60px 80px;
+#proDetails .car-info-section {
+  display: flex;
+  justify-content: space-around;
 }
+
+#proDetails .single-pro-details .car-details-section {
+  flex: 3;
+  border-right: 2px solid #d9e2e8;
+  padding-right: 20px;
+}
+
+#proDetails .single-pro-details .car-details-section h4{
+  font-weight: bold;
+  text-align: center;
+  padding: 15px;
+}
+
+#proDetails .single-pro-details .car-book-section {
+  flex: 1;
+  padding: 15px;
+}
+
+#proDetails .single-pro-details .car-info-protection {
+  list-style: none;
+  column-count: 2;
+}
+
+#proDetails .single-pro-details .car-info-protection li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+#proDetails .single-pro-details .car-info-protection li i {
+  margin-right: 10px;
+}
+
+.section-p1 {
+  padding: 60px 0px;
+}
+
+.float-right {
+  float:right;
+}
+
 
 
 

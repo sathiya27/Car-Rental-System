@@ -25,6 +25,7 @@ class CarModelController extends Controller
 
         $date = Carbon::parse($request->input('pickUpDate'))->format('jS F Y');
         $carModels = CarModel::availableCars($request->input('pickUpDate'));
+        session(['filteredCarModels' => $carModels]);
         return view('carModels.index', ['carModels' => $carModels, 'date' => $date]);
     }
 
@@ -57,6 +58,8 @@ class CarModelController extends Controller
      */
     public function show(CarModel $carModel)
     {
+        $carModels = session('filteredCarModels');
+        $carModel = $carModels->firstWhere('id', $carModel->id);
         return view('carModels.show', ['carModel' => $carModel]);
     }
 
