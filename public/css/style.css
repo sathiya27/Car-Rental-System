@@ -310,10 +310,11 @@ a:focus {
   padding: 10px 45px;
   background-color: #f22324;
   color: #fefdfc;
-  border-radius: 0;
+  border-radius: 5px;
   border: 1px solid #f22324;
   text-transform: uppercase;
   margin-top: 35px;
+  transition: background-color 0.3s ease;
 }
 
 .slider_section .slider_container .detail_container .detail-box a:hover {
@@ -435,9 +436,11 @@ a:focus {
   padding: 10px 65px;
   background-color: #240a5e;
   color: #fefdfc;
-  border-radius: 0;
+  border-radius: 5px;
   border: 1px solid #240a5e;
   margin-top: 25px;
+  transition: background-color 0.3s ease;
+
 }
 
 .book_section form .btn-container button:hover {
@@ -1245,6 +1248,7 @@ a:focus {
 #proDetails {
   display: flex;
   margin-top: 20px;
+  justify-content: center;
 }
 
 #proDetails .single-pro-details{
@@ -1272,10 +1276,6 @@ a:focus {
   border-radius: 20px;
 }
 
-#proDetails .single-pro-details h2 {
-  font-size: 26px;
-}
-
 #proDetails .single-pro-details select {
   display: block;
   padding: 5px 10px;
@@ -1297,6 +1297,11 @@ a:focus {
 #proDetails .single-pro-details button {
   background-color: #088178;
   color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+#proDetails .single-pro-details button:hover {
+  background-color: #0aa58c; /* Slightly lighter shade */
 }
 
 #proDetails .single-pro-details span {
@@ -1323,6 +1328,28 @@ a:focus {
 #proDetails .single-pro-details .car-book-section {
   flex: 1;
   padding: 15px;
+  padding-right: 0px;
+  align-content: center;
+}
+
+#proDetails .single-pro-details .car-book-section h2 {
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 0px;
+
+}
+
+#proDetails .single-pro-details .car-book-section span {
+  font-size: 15px;
+  margin-bottom: 5px;
+
+}
+
+#proDetails .single-pro-details .car-book-section .book-button {
+  display: block;
+  width: 100%;
+  margin-top:5px;
+
 }
 
 #proDetails .single-pro-details .car-info-protection {

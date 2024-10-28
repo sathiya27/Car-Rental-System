@@ -44,8 +44,9 @@
                 </ul>
             </div>
             <div class="car-book-section">
-                <h2>RM {{$carModel->pricePerDay}}/per day</h2>
-                <button class="normal btn">Book</button>
+                <h2>RM {{$carModel->pricePerDay}}</h2>
+                <span>/Per day</span>
+                <button class="normal btn book-button">Book</button>
             </div>
         </div>
     </div>
