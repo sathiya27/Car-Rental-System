@@ -1294,13 +1294,15 @@ a:focus {
   outline: none;
 }
 
-#proDetails .single-pro-details button {
+#proDetails .single-pro-details button,
+#proDetails .single-pro-details a{
   background-color: #088178;
   color: #fff;
   transition: background-color 0.3s ease;
 }
 
-#proDetails .single-pro-details button:hover {
+#proDetails .single-pro-details button:hover,
+#proDetails .single-pro-details a:hover {
   background-color: #0aa58c; /* Slightly lighter shade */
 }
 
@@ -1349,7 +1351,6 @@ a:focus {
   display: block;
   width: 100%;
   margin-top:5px;
-
 }
 
 #proDetails .single-pro-details .car-info-protection {

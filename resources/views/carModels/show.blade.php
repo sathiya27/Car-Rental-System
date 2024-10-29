@@ -46,7 +46,7 @@
             <div class="car-book-section">
                 <h2>RM {{$carModel->pricePerDay}}</h2>
                 <span>/Per day</span>
-                <button class="normal btn book-button">Book</button>
+                <a href="{{route('bookings.create')}}" class="normal btn book-button">Book</a>
             </div>
         </div>
     </div>
