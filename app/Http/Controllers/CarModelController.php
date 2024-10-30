@@ -25,7 +25,13 @@ class CarModelController extends Controller
 
         $date = Carbon::parse($request->input('pickUpDate'))->format('jS F Y');
         $carModels = CarModel::availableCars($request->input('pickUpDate'));
-        session(['filteredCarModels' => $carModels]);
+        session([
+            'filteredCarModels' => $carModels,
+            'pickUpLocation' => $request->input('pickUpLocation'),
+            'dropOffLocation' => $request->input('dropOffLocation'),
+            'pickUpDate' => Carbon::parse($request->input('pickUpDate')),
+            'dropOffDate' => Carbon::parse($request->input('dropOffDate'))
+        ]);
         return view('carModels.index', ['carModels' => $carModels, 'date' => $date]);
     }
 
@@ -60,6 +66,7 @@ class CarModelController extends Controller
     {
         $carModels = session('filteredCarModels');
         $carModel = $carModels->firstWhere('id', $carModel->id);
+        session(['carModel' => $carModel]);
         return view('carModels.show', ['carModel' => $carModel]);
     }
 

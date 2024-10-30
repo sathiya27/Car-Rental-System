@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Location;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -23,7 +24,7 @@ class BookingController extends Controller
      */
     public function create()
     {
-        return view('bookings.create');
+        return view('bookings.create', ['locations' => Location::availabeLocation()]);
     }
 
     /**
@@ -34,7 +35,7 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
     }
 
     /**
