@@ -23,4 +23,12 @@ class Car extends Model
     {
         return self::where('availableDate', '<=', $filterDate)->get();
     }
+
+    public static function getAvailableCar($carModelId, $pickUpDate)
+    {
+        return (CarModel::find($carModelId)->cars()
+            ->where('availableDate', '<', $pickUpDate)
+            ->first()
+        );
+    }
 }

@@ -5,6 +5,15 @@
 @section('content')
 <section class="section-p1">
     <div class="container">
+        @if ($errors->any())
+        <div>
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
         <form action="{{route('bookings.store')}}" method="Post">
             @csrf
             <label for="fName">First name</label>
@@ -31,14 +40,17 @@
                 @endforeach
             </select>
 
-            <label for="pickUpDateTime">Pick Up Date</label>
+            <label for="pickUpDateTime">Pick Up Date Time</label>
             <input type="datetime-local" name="pickUpDateTime"
-                min="{{ now()->format('Y-m-d\TH:i') }}"
+                min="{{ session('pickUpDate')->startOfDay()->format('Y-m-d\TH:i') }}"
+                max="{{ session('pickUpDate')->endOfDay()->format('Y-m-d\TH:i') }}"
                 value="{{ session('pickUpDate') ? session('pickUpDate')->format('Y-m-d\TH:i') : '' }}" required>
+            <!-- fix the time not storing in database properly issue -->
 
             <label for=" dropOffDateTime">Drop Off Date</label>
             <input type="datetime-local" name="dropOffDateTime"
-                min="{{ now()->format('Y-m-d\TH:i') }}"
+                min="{{ session('dropOffDate')->startOfDay()->format('Y-m-d\TH:i') }}"
+                max="{{ session('dropOffDate')->endOfDay()->format('Y-m-d\TH:i') }}"
                 value="{{ session('dropOffDate') ? session('dropOffDate')->format('Y-m-d\TH:i') : '' }}" required>
 
             <input type="hidden" name="carId" value="{{session('carModel')->id}}">

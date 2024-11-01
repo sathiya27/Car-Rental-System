@@ -9,6 +9,8 @@ class Booking extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function car()
     {
         return $this->belongsTo(Car::class);
@@ -17,8 +19,8 @@ class Booking extends Model
     public function locations()
     {
         return $this->belongsToMany(Location::class, 'booking_location')
-                    ->withPivot('type')
-                    ->withTimestamps();
+            ->withPivot('type')
+            ->withTimestamps();
     }
 
     public function user()

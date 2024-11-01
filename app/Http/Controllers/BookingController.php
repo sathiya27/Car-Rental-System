@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
+use App\Models\Car;
+use App\Models\Booking;
 use App\Models\Location;
 use Illuminate\Http\Request;
 
@@ -35,7 +38,35 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $validatedData = $request->validate([
+            'fName' => 'required',
+            'lName' => 'required',
+            'pickUpLocationId' => 'required|exists:locations,id',
+            'dropOffLocationId' => 'required|exists:locations,id',
+            'pickUpDateTime' => 'required|date_format:Y-m-d\TH:i',
+            'dropOffDateTime' => 'required|date_format:Y-m-d\TH:i',
+            'carId' => 'required|exists:cars,id',
+            'userId' => 'required|exists:users,id',
+        ]);
+
+        $car = Car::getAvailableCar($validatedData['carId'], $validatedData['pickUpDateTime']);
+
+        $car->availableDate = Carbon::parse($validatedData['dropOffDateTime'])->setTimezone('UTC')->addDay();
+        $car->save();
+
+        $booking = Booking::create([
+            'user_id' => $validatedData['userId'],
+            'firstName' => $validatedData['fName'],
+            'lastName' => $validatedData['lName'],
+            'car_id' => $car->id,
+            'pick_up_dateTime' => Carbon::parse($validatedData['pickUpDateTime'])->setTimezone('UTC'),
+            'drop_off_dateTime' => Carbon::parse($validatedData['dropOffDateTime'])->setTimezone('UTC'),
+        ]);
+
+        $booking->locations()->attach($validatedData['pickUpLocationId'], ['type' => 'Pick Up']);
+        $booking->locations()->attach($validatedData['dropOffLocationId'], ['type' => 'Drop Off']);
+
+        return view('bookings.show')->with('success', 'Booking confirmed');
     }
 
     /**

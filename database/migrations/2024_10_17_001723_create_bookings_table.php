@@ -19,8 +19,6 @@ return new class extends Migration
             $table->string('firstName');
             $table->string('lastName');
             $table->foreignId('car_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('pick_up_location_id')->constrained('locations')->cascadeOnDelete();
-            $table->foreignId('drop_off_location_id')->constrained('locations')->cascadeOnDelete();
             $table->dateTime('pick_up_dateTime');
             $table->dateTime('drop_off_dateTime');
             $table->timestamps();
