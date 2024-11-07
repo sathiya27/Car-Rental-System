@@ -27,7 +27,25 @@ class BookingController extends Controller
      */
     public function create()
     {
-        return view('bookings.create', ['locations' => Location::availabeLocation()]);
+        $pickUpDate = session()->get('pickUpDate');
+        $dropOffDate = session()->get('dropOffDate');
+
+        $days = $pickUpDate->diffInDays($dropOffDate) + 1;
+        $totalPrice = number_format((float) session('carModel')->pricePerDay * $days, 2, '.', '');
+
+        session([
+            'totalPrice' => $totalPrice,
+            'filteredPickUpDate' => $pickUpDate->format('l, M d, Y'),
+            'filteredDropOffDate' => $dropOffDate->format('l, M d, Y')
+        ]);
+
+        /* dd(session()->all()); */
+        return view('bookings.create', [
+            'locations' => Location::availabeLocation(),
+            'NumberOfDays' => $days,
+            'pickUpLoca' => Location::find(session('pickUpLocation')),
+            'dropOffLoca' => Location::find(session('dropOffLocation')),
+        ]);
     }
 
     /**
